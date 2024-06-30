@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#ddev-generated
+# ddev-generated
 
 VNC_DIR="${HOME}/.vnc"
 
@@ -15,5 +15,5 @@ echo -e "#!/bin/bash\n" > ${HOME}/.xsession
 
 vncserver $DISPLAY -geometry 1280x800 -depth 24
 
-tail -f ${VNC_DIR}/.vnc/*.log
+tail -f ${VNC_DIR}/*.log
 

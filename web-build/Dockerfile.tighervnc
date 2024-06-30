@@ -1,13 +1,10 @@
 #ddev-generated
 
-# Install VNC server
-RUN apt-get update && \
-    apt-get install -y tightvncserver dbus-x11
-
 COPY start-vnc.sh /usr/local/bin/start-vnc.sh
 RUN chmod +x /usr/local/bin/start-vnc.sh
 
 COPY start-vnc.conf /etc/supervisor/conf.d/start-vnc.conf
 
-EXPOSE 5901
+# Expose VNC and noVNC ports
+EXPOSE 5901 6080
 

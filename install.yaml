@@ -1,4 +1,4 @@
-name: ddev-vnc 
+name: ddev-tigervnc 
 
 pre_install_actions:
 # list of files and directories listed that are copied into project .ddev directory
@@ -6,10 +6,10 @@ pre_install_actions:
 # if it hasn't been modified by the user.
 # DDEV environment variables can be interpolated into these filenames
 project_files:
- - web-build/Dockerfile.vnc
- - web-build/start-vnc.conf 
- - web-build/start-vnc.sh
- - docker-compose.vnc.yml 
+ - web-build/Dockerfile.tighervnc
+ - web-build/start-tigervnc.conf 
+ - web-build/start-tigervnc.sh
+ - docker-compose.tigervnc.yml 
 
 # List of files and directories that are copied into the global .ddev directory
 # DDEV environment variables can be interpolated into these filenames
