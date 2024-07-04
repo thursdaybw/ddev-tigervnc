@@ -1,0 +1,14 @@
+#ddev-generated
+
+COPY start-tigervnc.sh /usr/local/bin/start-tigervnc.sh
+RUN chmod +x /usr/local/bin/start-tigervnc.sh
+
+COPY start-tigervnc.conf /etc/supervisor/conf.d/start-tigervnc.conf
+
+# This results in putting  
+COPY xstartup /home/$username/.vnc/xstartup
+RUN chown -R $username:$username /home/$username/.vnc
+RUN chmod +x /home/$username/.vnc/xstartup
+
+# Expose VNC and noVNC ports
+EXPOSE 5901

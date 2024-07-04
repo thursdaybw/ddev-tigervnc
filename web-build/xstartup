@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#ddev-generated
+
+# Log all output to a file to help with debugging
+exec > ~/.vnc/xstartup.log 2>&1
+
+# Set the background color of the root window to red
+# This helps confirm that the VNC session is starting correctly
+xsetroot -solid grey 
+
+# Start VNC configuration tool in iconic mode
+# -iconic: Start the application minimized (iconified)
+# vncconfig is used to enable clipboard sharing between the VNC server and client
+# Running it in the background with & ensures it does not block the script
+vncconfig -iconic &
+
+# Start the window manager without backgrounding it
+# If the window manager is already running, this avoids starting it again
+if ! pgrep -x 'openbox' > /dev/null; then
+  openbox-session
+fi
